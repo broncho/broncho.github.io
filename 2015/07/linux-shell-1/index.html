@@ -4,24 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>我与博客 | secondriver</title>
+    <title>Linux Shell 笔记(一) | secondriver</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="secondriver">
     
 
     
-    <meta name="description" content="可以将一群从事计算机软件开发的人员统称为程序员，我们是一群不同于一般人类的人类，我们在为解放机械操作，消除印象与习惯错误，提高生活质量，改变生活方式不懈的努力，我们可堪称为人类艺术家，我们用每一颗离散的神经一路延续着创新，探索，灵感，努力，分享······">
+    <meta name="description" content="本文主要记录一些Linux Shell编程知识,代码例子,注意事项,问题汇总, 使用技巧.持续更新,不断完善.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我与博客">
-<meta property="og:url" content="https://broncho.github.io/2015/07/start-with-hexo/index.html">
+<meta property="og:title" content="Linux Shell 笔记(一)">
+<meta property="og:url" content="https://broncho.github.io/2015/07/linux-shell-1/index.html">
 <meta property="og:site_name" content="secondriver">
-<meta property="og:description" content="可以将一群从事计算机软件开发的人员统称为程序员，我们是一群不同于一般人类的人类，我们在为解放机械操作，消除印象与习惯错误，提高生活质量，改变生活方式不懈的努力，我们可堪称为人类艺术家，我们用每一颗离散的神经一路延续着创新，探索，灵感，努力，分享······">
-<meta property="og:image" content="https://broncho.github.io/2015/07/start-with-hexo/jiang-liu-er.jpg">
-<meta property="og:updated_time" content="2015-07-19T05:43:19.580Z">
+<meta property="og:description" content="本文主要记录一些Linux Shell编程知识,代码例子,注意事项,问题汇总, 使用技巧.持续更新,不断完善.">
+<meta property="og:updated_time" content="2015-07-22T09:07:11.477Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我与博客">
-<meta name="twitter:description" content="可以将一群从事计算机软件开发的人员统称为程序员，我们是一群不同于一般人类的人类，我们在为解放机械操作，消除印象与习惯错误，提高生活质量，改变生活方式不懈的努力，我们可堪称为人类艺术家，我们用每一颗离散的神经一路延续着创新，探索，灵感，努力，分享······">
+<meta name="twitter:title" content="Linux Shell 笔记(一)">
+<meta name="twitter:description" content="本文主要记录一些Linux Shell编程知识,代码例子,注意事项,问题汇总, 使用技巧.持续更新,不断完善.">
 
     
     
@@ -79,14 +78,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/start-with-hexo/" title="我与博客" itemprop="url">我与博客</a>
+      <a href="/2015/07/linux-shell-1/" title="Linux Shell 笔记(一)" itemprop="url">Linux Shell 笔记(一)</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="secondriver" target="_blank" itemprop="author">secondriver</a>
 		
   <p class="article-time">
-    <time datetime="2015-07-18T10:44:38.000Z" itemprop="datePublished"> 发表于 2015-07-18</time>
+    <time datetime="2015-07-22T07:23:29.000Z" itemprop="datePublished"> 发表于 2015-07-22</time>
     
   </p>
 </header>
@@ -95,32 +94,45 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#基础知识"><span class="toc-number">1.</span> <span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码例子"><span class="toc-number">2.</span> <span class="toc-text">代码例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意事项"><span class="toc-number">3.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#问题汇总"><span class="toc-number">4.</span> <span class="toc-text">问题汇总</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用技巧"><span class="toc-number">5.</span> <span class="toc-text">使用技巧</span></a></li></ol>
 		
 		</div>
 		
-		<blockquote><p>可以将一群从事计算机软件开发的人员统称为程序员，我们是一群不同于一般人类的人类，我们在为解放机械操作，消除印象与习惯错误，提高生活质量，改变生活方式不懈的努力，我们可堪称为人类艺术家，我们用每一颗离散的神经一路延续着创新，探索，灵感，努力，分享······</p>
-</blockquote>
+		<p>本文主要记录一些Linux Shell编程知识,代码例子,注意事项,问题汇总, 使用技巧.持续更新,不断完善.</p>
 <a id="more"></a>
-<hr>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;时间过的真快,转眼间已经有五年多时间过去了,从最开始的note上记录文字,到<a href="http://aiilive.blog.51cto.com" title="野马红尘" target="_blank" rel="external">51cto</a>上记录,今天使用<a href="https://github.com" title="Github官网" target="_blank" rel="external">hexo</a>在<a href="http://hexo.io" title="hexo官网" target="_blank" rel="external">github</a>上搭建了这个静态博客,希望以后能够继续坚持,键耕不辍,记录成长过程中的点点滴滴.</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;刚开始学习编程的时候,每天学到一些新东西,就会讲学到的知识进行整理,然后写成博客发布到网站去.久而久之,文章也越来越多,而且花的时间,精力也越多,不免就有些担心这些记录会不会丢失(事实上第三方免费提供的服务不保证补丢失),另外需要修改一些问题也变得困难起来了.使用文本编辑+自己管理内容只要做好必要的备份就可以避免这些问题.</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;坚持是一件及其艰难的事情,换一个环境继续坚持,码字只为不断归纳,总结,思考,分享和进步.</p>
-<img src="/2015/07/start-with-hexo/jiang-liu-er.jpg" alt="Stay hungry,&nbsp; Stay foolish&nbsp;&nbsp;-&nbsp;&nbsp;江流儿" title="Stay hungry,&nbsp; Stay foolish&nbsp;&nbsp;-&nbsp;&nbsp;江流儿">
-  
+<h4 id="基础知识">基础知识</h4><ul>
+<li><p>Shell脚本基本构成: 特例注释#!/bin/bash,脚本内容,脚本可执行权限构成.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span></span><br><span class="line"><span class="comment">#这个脚本是用来干啥的</span></span><br><span class="line"><span class="comment">#脚本作者使二狗</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'Hello I am '</span><span class="variable">$1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>反引号(``) , 用反引号引住命令可以讲命令执行的结果赋值给变量,这是个重要的特性.</p>
+</li>
+</ul>
+<h4 id="代码例子">代码例子</h4><ul>
+<li>特殊变量$$(进程PID)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/usr/bin/env bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Shell Process ID pid="</span>$$</span><br></pre></td></tr></table></figure>
+<ul>
+<li>定义和调用函数<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/usr/bin/env bash</span><br><span class="line"></span></span><br><span class="line"><span class="comment">#定义函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">sum</span></span>()&#123;</span><br><span class="line">  expr <span class="variable">$1</span> + <span class="variable">$2</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#调用函数, 后面跟两个参数</span></span><br><span class="line">sum <span class="number">1</span> <span class="number">2</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">#$? 上一条命令执行返回值</span></span><br><span class="line"><span class="built_in">echo</span> $?</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义函数,可以省去function关键字</span></span><br><span class="line"><span class="function"><span class="title">total</span></span>()&#123;</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">'$10='</span><span class="variable">$&#123;10&#125;</span>  <span class="comment"># need &#123;&#125;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">total <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> <span class="number">10</span></span><br><span class="line"></span><br><span class="line">结果:</span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="variable">$10</span>=<span class="number">10</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="注意事项">注意事项</h4><ul>
+<li>Shell变量引用,如果参数超过9个,这时引用参数10则需要使用大括号如${10}.下面代码片段的结果超出预期,其中$numberY当作应用变量numberY,但是其未定义.所以在引用变量的时候,如果存在歧义最好添加上大括号({}).<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">number=<span class="number">10</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"This is <span class="variable">$numberY</span>"</span></span><br><span class="line">结果:</span><br><span class="line">This is</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="问题汇总">问题汇总</h4><h4 id="使用技巧">使用技巧</h4>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/程式生活/">程式生活</a>
+  <a class="article-category-link" href="/categories/Linux/">Linux</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/博客/">博客</a><a href="/tags/生活/">生活</a>
+  <span></span> <a href="/tags/Linux/">Linux</a><a href="/tags/Shell/">Shell</a>
   </div>
 
 </div>
@@ -129,7 +141,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://broncho.github.io/2015/07/start-with-hexo/" data-title="我与博客 | secondriver" data-tsina="1764119373" class="share clearfix">
+	  <div data-url="https://broncho.github.io/2015/07/linux-shell-1/" data-title="Linux Shell 笔记(一) | secondriver" data-tsina="1764119373" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -142,14 +154,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/07/hello-hexo-world/" title="Hello hexo World">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Hello hexo World</span>
+
+<div class="next">
+<a href="/2015/07/hello-hexo-world/"  title="Hello hexo World">
+ <strong>下一篇：</strong><br/> 
+ <span>Hello hexo World
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -161,7 +173,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#基础知识"><span class="toc-number">1.</span> <span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码例子"><span class="toc-number">2.</span> <span class="toc-text">代码例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意事项"><span class="toc-number">3.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#问题汇总"><span class="toc-number">4.</span> <span class="toc-text">问题汇总</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用技巧"><span class="toc-number">5.</span> <span class="toc-text">使用技巧</span></a></li></ol>
  
   </div>
 
